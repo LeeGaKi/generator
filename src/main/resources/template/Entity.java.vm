@@ -12,7 +12,7 @@ import lombok.Data;
 
 /**
  * ${comments}
- * 
+ *
  * @author ${author}
  * @email ${email}
  * @date ${datetime}
