@@ -2,15 +2,26 @@ package ${package}.${moduleName}.service.impl;
 
 import org.springframework.stereotype.Service;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import org.springframework.beans.factory.annotation.Autowired;
 import ${package}.${moduleName}.dao.${className}Dao;
 import ${package}.${moduleName}.entity.${className}Entity;
 import ${package}.${moduleName}.service.${className}Service;
-
+import java.util.List;
 
 @Service("${classname}Service")
 public class ${className}ServiceImpl extends ServiceImpl<${className}Dao, ${className}Entity> implements ${className}Service {
 
-
-
+    @Autowired
+    private ${className}Dao ${classname}Dao;
+    /**
+    * 分页查询
+    */
+    @Override
+    public List<${className}Entity> getListByPage(Integer currentPage, Integer size) {
+        Page<${className}Entity> page = new Page<>(currentPage,size);
+        IPage<${className}Entity> iPage = ${classname}Dao.getListByPage(page);
+        return iPage.getRecords();
+    }
 }
