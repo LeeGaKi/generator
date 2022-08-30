@@ -6,11 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import ${package}.${moduleName}.entity.${className}Entity;
 import ${package}.${moduleName}.service.${className}Service;
-
 import icu.lijiaqi.gulimall.common.pojo.R;
-
-
-
 /**
  * ${comments}
  *
