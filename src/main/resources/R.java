@@ -10,6 +10,7 @@ public class R extends HashMap<String, Object> {
 
     public R() {
         put("code", 200);
+        put("msg", "操作成功");
     }
 
     public static R error() {
@@ -27,15 +28,9 @@ public class R extends HashMap<String, Object> {
         return r;
     }
 
-    public static R ok(String msg) {
-        R r = new R();
-        r.put("msg", msg);
-        return r;
-    }
 
     public static R ok(Object object) {
         R r = new R();
-        r.put("msg", "操作成功");
         r.put("data", object);
         return r;
     }
